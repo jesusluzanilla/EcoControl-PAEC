@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoControl PAEC | Registro y seguimiento</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio"><span class="brand-mark">E</span><span>EcoControl <b>PAEC</b><small>Registro y seguimiento escolar</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    <nav id="nav">
+      <a href="#inicio">Inicio</a><a href="#panel">Panel</a><a href="#actividades">Actividades</a><a href="#evidencias">Evidencias</a>
+    </nav>
+    <button class="btn btn-outline" id="loginBtn">Acceso</button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">PLATAFORMA ESCOLAR · PAEC</span>
+        <h1>Organiza tus actividades.<br><em>Da seguimiento</em> a cada evidencia.</h1>
+        <p>Un espacio sencillo para registrar actividades del Programa de Aula, Escuela y Comunidad, consultar avances y mantener la información organizada.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#actividades">Ver actividades <span>→</span></a><a class="text-link" href="#como-funciona">Conocer el sistema ↘</a></div>
+        <div class="hero-note"><span class="dot"></span> Información organizada en un solo lugar</div>
+      </div>
+      <div class="hero-art" aria-label="Resumen visual de actividades">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="mini-card card-main">
+          <div class="card-top"><span class="tiny-icon">✓</span><span class="status">EN SEGUIMIENTO</span></div>
+          <h3>Jornada de cuidado del entorno</h3><p>Actividad comunitaria</p>
+          <div class="progress-label"><span>Avance de ejemplo</span><b>75%</b></div><div class="progress"><span style="width:75%"></span></div>
+          <div class="card-foot"><span>◷ Fecha programada</span><b>20 Oct</b></div>
+        </div>
+        <div class="floating-tag tag-top">♻ <span>Acciones con impacto</span></div>
+        <div class="floating-tag tag-bottom"><span class="tag-check">✓</span><span><b>Todo organizado</b><small>Actividades y evidencias</small></span></div>
+        <div class="hero-circle">EC<br><small>PAEC</small></div>
+      </div>
+    </section>
+
+    <section class="stats" id="panel">
+      <div><span class="stat-icon">▦</span><span class="stat-label">Actividades registradas</span><strong id="totalStat">3</strong></div>
+      <div><span class="stat-icon amber">◷</span><span class="stat-label">Pendientes</span><strong id="pendingStat">2</strong></div>
+      <div><span class="stat-icon green">✓</span><span class="stat-label">Completadas</span><strong id="doneStat">1</strong></div>
+      <div><span class="stat-icon purple">▤</span><span class="stat-label">Evidencias adjuntas</span><strong id="evidenceStat">2</strong></div>
+    </section>
+
+    <section class="section" id="actividades">
+      <div class="section-heading">
+        <div><span class="eyebrow">SEGUIMIENTO</span><h2>Actividades PAEC</h2><p>Consulta los registros o agrega una nueva actividad de ejemplo.</p></div>
+        <button class="btn btn-primary" id="newActivityBtn">＋ Nueva actividad</button>
+      </div>
+      <div class="toolbar">
+        <label class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="Buscar actividad, responsable..."></label>
+        <select id="statusFilter" aria-label="Filtrar por estado"><option value="">Todos los estados</option><option>Pendiente</option><option>En proceso</option><option>Completada</option></select>
+        <select id="categoryFilter" aria-label="Filtrar por categoría"><option value="">Todas las categorías</option><option>Ambiental</option><option>Comunitaria</option><option>Escolar</option><option>Socioemocional</option></select>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>Actividad</th><th>Categoría</th><th>Responsable</th><th>Fecha</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="activityRows"></tbody></table></div>
+      <p class="footnote">Los registros que aparecen al abrir la página son datos de demostración.</p>
+    </section>
+
+    <section class="how" id="como-funciona">
+      <div><span class="eyebrow">FLUJO DE TRABAJO</span><h2>Del registro a la evidencia.</h2><p>La idea es que cada actividad tenga responsable, fecha, categoría y un estado que permita conocer su avance.</p></div>
+      <div class="steps"><article><span>01</span><div><h3>Registra</h3><p>Agrega el nombre, descripción, fecha y responsable.</p></div></article><article><span>02</span><div><h3>Da seguimiento</h3><p>Actualiza el estado conforme avanza la actividad.</p></div></article><article><span>03</span><div><h3>Consulta</h3><p>Busca registros y revisa las evidencias asociadas.</p></div></article></div>
+    </section>
+
+    <section class="section evidence-section" id="evidencias">
+      <div class="section-heading"><div><span class="eyebrow">ARCHIVO DIGITAL</span><h2>Evidencias</h2><p>Adjunta archivos a una actividad desde el formulario de registro.</p></div><div class="evidence-count"><b id="evidenceCount">2</b><span>archivos de demostración</span></div></div>
+      <div class="evidence-grid" id="evidenceGrid">
+        <article class="evidence-card"><div class="file-icon image-file">▧</div><div><b>jornada_entorno.jpg</b><small>Jornada de cuidado del entorno</small></div><span class="file-type">JPG</span></article>
+        <article class="evidence-card"><div class="file-icon doc-file">▤</div><div><b>reporte_actividad.pdf</b><small>Organización escolar</small></div><span class="file-type">PDF</span></article>
+      </div>
+    </section>
+    <section class="callout"><div class="callout-icon">✳</div><div><h2>Una mejor organización para el trabajo en comunidad.</h2><p>EcoControl PAEC reúne los registros en una interfaz clara y adaptable a computadora o teléfono.</p></div><a href="#actividades">Explorar registros ↑</a></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-mark">E</span><span>EcoControl <b>PAEC</b><small>Plataforma escolar de seguimiento</small></span></a><span>Proyecto académico · 5ATP Programación</span><span>© 2026 EcoControl PAEC</span></footer>
+
+  <dialog id="activityDialog">
+    <form id="activityForm" method="dialog">
+      <div class="dialog-heading"><div><span class="eyebrow">NUEVO REGISTRO</span><h2 id="dialogTitle">Nueva actividad</h2></div><button type="button" class="close-btn" id="closeDialog" aria-label="Cerrar">×</button></div>
+      <input type="hidden" id="editId">
+      <label>Nombre de la actividad<input id="activityName" required maxlength="120" placeholder="Ej. Campaña de separación de residuos"></label>
+      <label>Descripción<textarea id="activityDescription" rows="3" placeholder="Describe brevemente la actividad"></textarea></label>
+      <div class="form-row"><label>Fecha<input id="activityDate" type="date" required></label><label>Responsable<input id="activityOwner" required placeholder="Nombre del responsable"></label></div>
+      <div class="form-row"><label>Categoría<select id="activityCategory"><option>Ambiental</option><option>Comunitaria</option><option>Escolar</option><option>Socioemocional</option></select></label><label>Estado<select id="activityStatus"><option>Pendiente</option><option>En proceso</option><option>Completada</option></select></label></div>
+      <label>Archivo de evidencia (opcional)<input id="activityFile" type="file" accept="image/*,.pdf,.doc,.docx"></label>
+      <p class="form-hint">Prototipo: los registros se mantienen en esta página mientras esté abierta. Aún no se guardan en una base de datos.</p>
+      <div class="dialog-actions"><button type="button" class="btn btn-outline" id="cancelDialog">Cancelar</button><button class="btn btn-primary" type="submit">Guardar actividad</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="loginDialog">
+    <form id="loginForm" method="dialog">
+      <div class="dialog-heading"><div><span class="eyebrow">ACCESO AL SISTEMA</span><h2>Iniciar sesión</h2></div><button type="button" class="close-btn" id="closeLogin" aria-label="Cerrar">×</button></div>
+      <label>Correo electrónico<input type="email" required placeholder="usuario@plantel.edu.mx"></label>
+      <label>Contraseña<input type="password" required placeholder="Escribe tu contraseña"></label>
+      <p class="form-hint">Vista demostrativa: el acceso real requiere conectar el backend PHP y la base de datos MySQL.</p>
+      <div class="dialog-actions"><button type="button" class="btn btn-outline" id="cancelLogin">Cancelar</button><button class="btn btn-primary" type="submit">Continuar</button></div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
